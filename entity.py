@@ -7,13 +7,16 @@ class Entity:
 	Constructor.
 
 	@param (int, int) position
+	@param Sprite sprite
 
 	@var int x
 	@var int y
+	@var Sprite sprite
 	'''
-	def __init__(self, (x, y)):
+	def __init__(self, (x, y), sprite):
 		self.x = x
 		self.y = y
+		self.sprite = sprite
 
 	'''
 	Execute this after the step.
@@ -28,15 +31,23 @@ class Entity:
 		pass
 
 	'''
-	Draw this entity on the screen.
+	Draw this Entity on the screen.
 
 	@param Surface screen
 	'''
 	def draw(self, screen):
-		pass
+		self.sprite.draw(screen, (self.x, self.y))
 
 	'''
-	Execute a single step for this entity.
+	Set the Sprite of this Entity.
+
+	@param Sprite sprite
+	'''
+	def setSprite(self, sprite):
+		self.sprite = sprite
+
+	'''
+	Execute a single step for this Entity.
 	'''
 	def step(self):
-		pass
+		self.sprite.step()
