@@ -54,6 +54,14 @@ class Entity:
 		self.sprite.onDraw(screen, (self.x, self.y))
 
 	'''
+	Receive a Keyboard state.
+
+	@param Keyboard keyboard
+	'''
+	def onKeyboard(self, keyboard):
+		pass
+
+	'''
 	Set the Sprite of this Entity.
 
 	@param Sprite sprite

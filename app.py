@@ -1,3 +1,4 @@
+from keyboard import Keyboard
 import pygame, sys
 
 '''
@@ -13,12 +14,14 @@ class App:
 	@var (int, int) size
 	@var Surface screen
 	@var Controller controller
+	@var Keyboard keyboard
 	'''
 	def __init__(self, size):
 		pygame.init()
 		self.size = size
 		self.screen = pygame.display.set_mode(size)
 		self.controller = None
+		self.keyboard = Keyboard()
 
 	'''
 	Draw the contents of the app on the screen.
@@ -42,6 +45,7 @@ class App:
 		events = pygame.event.get()
 		for event in events:
 			self.onEvent(event)
+		self.controllers.onKeyboard()
 		self.controller.onStep()
 		self.onDraw()
 		pygame.display.flip()
