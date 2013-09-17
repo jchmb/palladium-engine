@@ -28,14 +28,15 @@ class Alarm:
 	Execute a single step.
 	'''
 	def onStep(self):
-		if self.ticks > 0:
-			self.ticks -= 1
-		elif self.ticks == 0:
-			getattr(self.entity, method)()
-			if self.repeat:
-				self.rewind()
-			else:
-				self.stop()
+		if self.ticking:
+			if self.ticks > 0:
+				self.ticks -= 1
+			elif self.ticks == 0:
+				getattr(self.entity, method)()
+				if self.repeat:
+					self.rewind()
+				else:
+					self.stop()
 
 	'''
 	Rewind this Alarm.
