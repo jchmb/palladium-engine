@@ -16,13 +16,13 @@ class Controller:
 
 	@param Surface screen
 	'''
-	def draw(self, screen):
+	def onDraw(self, screen):
 		pass
 		
 	'''
 	Execute a single step.
 	'''
-	def step(self):
+	def onStep(self):
 		pass
 
 	'''
@@ -30,5 +30,5 @@ class Controller:
 
 	@param Event event
 	'''
-	def triggerEvent(self, event):
+	def onEvent(self, event):
 		pass

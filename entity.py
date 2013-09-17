@@ -35,8 +35,8 @@ class Entity:
 
 	@param Surface screen
 	'''
-	def draw(self, screen):
-		self.sprite.draw(screen, (self.x, self.y))
+	def onDraw(self, screen):
+		self.sprite.onDraw(screen, (self.x, self.y))
 
 	'''
 	Set the Sprite of this Entity.
@@ -49,5 +49,5 @@ class Entity:
 	'''
 	Execute a single step for this Entity.
 	'''
-	def step(self):
-		self.sprite.step()
+	def onStep(self):
+		self.sprite.onStep()

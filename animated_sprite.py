@@ -34,7 +34,7 @@ class AnimatedSprite(SurfaceSprite):
 	'''
 	Execute a single step.
 	'''
-	def step(self):
+	def onStep(self):
 		self.surfaceIndex += self.surfaceSpeed
 		if self.surfaceIndex >= len(self.surfaces):
 			self.surfaceIndex -= len(self.surfaces)

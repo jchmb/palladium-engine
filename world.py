@@ -27,6 +27,6 @@ class World(Controller):
 	'''
 	Execute a single step for this world.
 	'''
-	def step(self):
+	def onStep(self):
 		for entity in self.entities:
-			entity.step()
+			entity.onStep()

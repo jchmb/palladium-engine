@@ -21,11 +21,11 @@ class SurfaceSprite(Sprite):
 	@param Surface screen
 	@param (int, int) position
 	'''
-	def draw(self, screen, position):
+	def onDraw(self, screen, position):
 		screen.blit(self.surface, position)
 
 	'''
 	Execute a single step.
 	'''
-	def step(self):
+	def onStep(self):
 		pass

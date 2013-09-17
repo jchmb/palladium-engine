@@ -23,8 +23,8 @@ class App:
 	'''
 	Draw the contents of the app on the screen.
 	'''
-	def draw(self):
-		self.controller.draw(self.screen)
+	def onDraw(self):
+		self.controller.onDraw(self.screen)
 
 	'''
 	Set the controller of this app. 
@@ -38,12 +38,12 @@ class App:
 	'''
 	Execute a single step.
 	'''
-	def step(self):
+	def onStep(self):
 		events = pygame.event.get()
 		for event in events:
-			self.triggerEvent(event)
-		self.controller.step()
-		self.draw()
+			self.onEvent(event)
+		self.controller.onStep()
+		self.onDraw()
 		pygame.display.flip()
 
 	'''
@@ -51,8 +51,8 @@ class App:
 
 	@param Event event
 	'''
-	def triggerEvent(self, event):
+	def onEvent(self, event):
 		if event.type == pygame.QUIT:
 			sys.exit()
 		else:
-			self.controller.triggerEvent(event)
+			self.controller.onEvent(event)
