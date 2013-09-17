@@ -3,6 +3,7 @@ from controller import Controller
 
 '''
 @class World
+@extends Controller
 '''
 class World(Controller):
 	'''
