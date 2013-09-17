@@ -12,11 +12,26 @@ class Entity:
 	@var int x
 	@var int y
 	@var Sprite sprite
+	@var Alarm[] alarms
 	'''
 	def __init__(self, (x, y), sprite):
 		self.x = x
 		self.y = y
 		self.sprite = sprite
+		self.alarms = []
+
+	'''
+	Add an Alarm.
+
+	@param Alarm alarm
+	@param boolean activate
+	'''
+	def addAlarm(self, alarm, activate=True):
+		self.alarms.append(alarm)
+		alarm.entity = self
+		if activate:
+			alarm.rewind()
+			alarm.start()
 
 	'''
 	Execute this after the step.
@@ -47,7 +62,15 @@ class Entity:
 		self.sprite = sprite
 
 	'''
+	Execute a single step for each Alarm.
+	'''
+	def onAlarmsStep(self):
+		for alarm in self.alarms:
+			alarm.onStep()
+
+	'''
 	Execute a single step for this Entity.
 	'''
 	def onStep(self):
+		self.onAlarmsStep()
 		self.sprite.onStep()
