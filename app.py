@@ -33,6 +33,7 @@ class App:
 	'''
 	def setController(self, controller):
 		self.controller = controller
+		controller.app = self
 
 	'''
 	Execute a single step.

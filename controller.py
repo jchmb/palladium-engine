@@ -1,5 +1,6 @@
 '''
 @class Controller
+@abstract
 '''
 class Controller:
 	'''
