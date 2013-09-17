@@ -16,11 +16,11 @@ class Sprite:
 
 	@param Surface screen
 	'''
-	def draw(self, screen):
+	def onDraw(self, screen):
 		pass
 
 	'''
 	Execute a single step for this Sprite.
 	'''
-	def step(self):
+	def onStep(self):
 		pass
